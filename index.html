@@ -1,697 +1,459 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="yumengyang">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="yumengyang">
+  <meta name="keywords" content="">
+  <title>Nienter</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Java 基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/11/Java%20%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time class="dt-published" datetime="2021-01-11T05:07:02.900Z" itemprop="datePublished">2021-01-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<ul>
-<li><a href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5">基础概念</a><ul>
-<li><a href="#%E5%AF%B9%E8%B1%A1">对象</a></li>
-<li><a href="#%E7%B1%BB">类</a></li>
-<li><a href="#%E6%96%B9%E6%B3%95">方法</a></li>
-<li><a href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F">实例变量</a></li>
-</ul>
-</li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a><ul>
-<li><a href="#java%E6%A0%87%E8%AF%86%E7%AC%A6">java标识符</a><ul>
-<li><a href="#%E4%B8%8D%E7%94%A8%E6%95%B0%E5%AD%97%E5%BC%80%E5%A4%B4%E7%9A%84%E5%8E%9F%E5%9B%A0">不用数字开头的原因</a></li>
-</ul>
-</li>
-<li><a href="#java%E4%BF%AE%E9%A5%B0%E7%AC%A6">java修饰符</a></li>
-<li><a href="#java%E5%8F%98%E9%87%8F">java变量？？</a></li>
-<li><a href="#java-%E6%95%B0%E7%BB%84">Java 数组</a></li>
-<li><a href="#java-%E6%9E%9A%E4%B8%BE">Java 枚举</a></li>
-<li><a href="#java-%E5%85%B3%E9%94%AE%E5%AD%97">java 关键字</a></li>
-<li><a href="#java%E6%B3%A8%E9%87%8A">java注释</a></li>
-<li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
-<li><a href="#%E6%8E%A5%E5%8F%A3">接口</a></li>
-<li><a href="#java-%E6%BA%90%E7%A8%8B%E5%BA%8F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%9E%8B%E8%BF%90%E8%A1%8C%E5%8C%BA%E5%88%AB">Java 源程序与编译型运行区别</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%E5%92%8C%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80">编译型语言和解释型语言？？</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4">基本数据类型的取值范围</a></li>
-<li><a href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B">引用类型</a></li>
-<li><a href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6">访问控制修饰符</a></li>
-<li><a href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6">非访问控制修饰符</a></li>
-<li><a href="#java%E8%BF%90%E7%AE%97%E7%AC%A6">java运算符</a></li>
-<li><a href="#java-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84">java 循环结构</a></li>
-<li><a href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5">判断语句</a></li>
-<li><a href="#switch-case">switch case</a></li>
-<li><a href="#java-numbermath">java Number&amp;Math</a></li>
-<li><a href="#string-stringbuffer-stringbuilder">String StringBuffer StringBuilder</a></li>
-<li><a href="#java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">java 正则表达式</a></li>
-<li><a href="#java-stream-file-io">Java Stream。File。Io</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="基础概念">基础概念</span></h1><h2><span id="对象">对象</span></h2><p> 对象是类的一个实例，他有状态和行为</p>
-<h2><span id="类">类</span></h2><p>  类是一个模板，他描述一类对象的行为和状态</p>
-<h2><span id="方法">方法</span></h2><p>方法就是行为，一个类可以有很多方法</p>
-<h2><span id="实例变量">实例变量</span></h2><p>每个对象都有独特的实例变量，对象的状态由这些实例状态的值决定</p>
-<h1><span id="基本语法">基本语法</span></h1><ul>
-<li>大小写敏感</li>
-<li>类名：类的首字母大写，如果有多个单词组成，每个单词首字母都应该大写</li>
-<li>方法名 ：起始字母小写，其他单词首字母大写</li>
-<li>源文件名 ：应与类名相同</li>
-<li>主方法入口：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有使用java语言的都是</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="java标识符">java标识符</span></h2>Java 所有的组成部分都需要名字。==类名、变量名以及方法名都被称为标识符==。</li>
-<li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</li>
-<li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合</li>
-<li>关键字不能用作标识符</li>
-<li>标识符是大小写敏感的<br>合法标识符举例：age、$salary、_value、__1_value<br>非法标识符举例：123abc、-salary</li>
-</ul>
-<p>总结起来 就是三个 字母美元下划线开头，后面可以跟数字</p>
-<h3><span id="不用数字开头的原因">不用数字开头的原因</span></h3><p> 标示符（ID_entifier）是指用来标识某个实体的一个符号。在不同的应用环境下有不同的含义。比如，在日常生活中，某人的姓名；在数学解方程时，用到这样或那样的变量名或函数名；在编程语言中，标识符是为变量、常量、函数、等起的名字。所有这些，统统称为标识符。标识符可能是字母、符号，或由上述元素构成的组合。<br>多种语言表示数值的方法，第一个字符要求一定要是数字字符，尽管后面的字符可能不一定是数字字符。<br>下列JAVA代码声明不同类型数值的标识符(左边：变量类型 标识符)，并以相应的数值初始化(右边：变量数值)。<br>为了有效区别”数字值”与其”标识符”，必须对标识符有所约束。<br>比如下列 Java 代码的第一个声明，若取数字字符’0’为 这个 8 进制数值变量的标识符，即<br>int 0 = 0321；<br>那么，赋值操作符 ‘=’ 两边的符号均为数字字符，两者无法区分。</p>
-<p>所以，Java 语言规定，标识符的第一个字符不允许是数字字符，但第一个字符可以是下划线’<em>‘。于是，下列Java代码的标识符的第一个字符只要取为下划线’</em>‘, 第二个字符是什么数字字符都无妨了。</p>
-<p>再比如，下列 Java 代码的最后一个声明:<br>double e = 3e3;<br>如果标识符允许第一个字符为数字字符的话，那么 3e3 既可表示标识符(变量名)，亦可表示数值：3*10^3, 编译时会显示二义性。</p>
-<p>为了避免上述弊端，多种编程语言对标识符的命名法，均做出严格规定：标识符不能以数字字符开头。</p>
-<h2><span id="java修饰符">java修饰符</span></h2><p>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</p>
-<p>访问控制修饰符 : default, public , protected, private<br>非访问控制修饰符 : final, abstract, static, synchronized</p>
-<h2><span id="java变量">java变量？？</span></h2><p> 局部变量<br> 静态变量又称类变量<br> 成员变量（非静态变量）</p>
-<h2><span id="java-数组">Java 数组</span></h2><p> 数组是储存在堆上的对象，可以保存多个同类型变量</p>
-<h2><span id="java-枚举">Java 枚举</span></h2><p> Java 5.0引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的 bug。</p>
-<h2><span id="java-关键字">java 关键字</span></h2><table class="reference">
-<tbody><tr>
-<th>类别</th>
-<th>关键字</th>
-<th>说明</th>
-</tr>
-<tr>
-<td rowspan="3" align="center">访问控制</td>
-<td>private</td>
-<td>私有的</td>
-</tr>
-<tr>
-<td>protected</td>
-<td>受保护的</td>
-</tr>
-<tr>
-<td>public</td>
-<td>公共的</td>
-</tr>
-<tr>
-<td rowspan="13" align="center">类、方法和变量修饰符</td>
-<td>abstract</td>
-<td>声明抽象</td>
-</tr>
-<tr>
-<td>class</td>
-<td>类</td>
-</tr>
-<tr>
-<td>extends</td>
-<td>扩充,继承</td>
-</tr>
-<tr>
-<td>final</td>
-<td>最终值,不可改变的</td>
-</tr>
-<tr>
-<td>implements</td>
-<td>实现（接口）</td>
-</tr>
-<tr>
-<td>interface</td>
-<td>接口</td>
-</tr>
-<tr>
-<td>native</td>
-<td>本地，原生方法（非 Java 实现）</td>
-</tr>
-<tr>
-<td>new</td>
-<td>新,创建</td>
-</tr>
-<tr>
-<td>static</td>
-<td>静态</td>
-</tr>
-<tr>
-<td>strictfp</td>
-<td>严格,精准</td>
-</tr>
-<tr>
-<td>synchronized</td>
-<td>线程,同步</td>
-</tr>
-<tr>
-<td>transient</td>
-<td>短暂</td>
-</tr>
-<tr>
-<td>volatile</td>
-<td>易失</td>
-</tr>
-<tr>
-<td rowspan="12" align="center">程序控制语句</td>
-<td>break</td>
-<td>跳出循环</td>
-</tr>
-<tr>
-<td>case</td>
-<td>定义一个值以供 switch 选择</td>
-</tr>
-<tr>
-<td>continue</td>
-<td>继续</td>
-</tr>
-<tr>
-<td>default</td>
-<td>默认</td>
-</tr>
-<tr>
-<td>do</td>
-<td>运行</td>
-</tr>
-<tr>
-<td>else</td>
-<td>否则</td>
-</tr>
-<tr>
-<td>for</td>
-<td>循环</td>
-</tr>
-<tr>
-<td>if</td>
-<td>如果</td>
-</tr>
-<tr>
-<td>instanceof</td>
-<td>实例</td>
-</tr>
-<tr>
-<td>return</td>
-<td>返回</td>
-</tr>
-<tr>
-<td>switch</td>
-<td>根据值选择执行</td>
-</tr>
-<tr>
-<td>while</td>
-<td>循环</td>
-</tr>
-<tr>
-<td rowspan="6" align="center">错误处理</td>
-<td>assert</td>
-<td>断言表达式是否为真</td>
-</tr>
-<tr>
-<td>catch</td>
-<td>捕捉异常</td>
-</tr>
-<tr>
-<td>finally</td>
-<td>有没有异常都执行</td>
-</tr>
-<tr>
-<td>throw</td>
-<td>抛出一个异常对象</td>
-</tr>
-<tr>
-<td>throws</td>
-<td>声明一个异常可能被抛出</td>
-</tr>
-<tr>
-<td>try</td>
-<td>捕获异常</td>
-</tr>
-<tr>
-<td rowspan="2" align="center">包相关</td>
-<td>import</td>
-<td>引入</td>
-</tr>
-<tr>
-<td>package</td>
-<td>包</td>
-</tr>
-<tr>
-<td rowspan="8" align="center">基本类型</td>
-<td>boolean</td>
-<td>布尔型</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>字节型</td>
-</tr>
-<tr>
-<td>char</td>
-<td>字符型</td>
-</tr>
-<tr>
-<td>double</td>
-<td>双精度浮点</td>
-</tr>
-<tr>
-<td>float</td>
-<td>单精度浮点</td>
-</tr>
-<tr>
-<td>int</td>
-<td>整型</td>
-</tr>
-<tr>
-<td>long</td>
-<td>长整型</td>
-</tr>
-<tr>
-<td>short</td>
-<td>短整型</td>
-</tr>
-
-<tr>
-<td rowspan="3" align="center">变量引用</td>
-<td>super</td>
-<td>父类,超类</td>
-</tr>
-<tr>
-<td>this</td>
-<td>本类</td>
-</tr>
-<tr>
-<td>void</td>
-<td>无返回值</td>
-</tr>
-<tr>
-<td rowspan="3" align="center">保留关键字</td>
-<td>goto</td>
-<td>是关键字，但不能使用</td>
-</tr>
-<tr>
-<td>const</td>
-<td>是关键字，但不能使用</td>
-</tr>
-<tr>
-<td>null</td>
-<td>空</td>
-</tr>
-</tbody></table>
-## java注释
-三种
-## 继承
-在 Java 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。
-
-<p>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。</p>
-<h2><span id="接口">接口</span></h2><p>在 Java 中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。</p>
-<p>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。</p>
-<h2><span id="java-源程序与编译型运行区别">Java 源程序与编译型运行区别</span></h2><p><img src="https://www.runoob.com/wp-content/uploads/2013/12/ZSSDMld.png" alt="image"></p>
-<h2><span id="编译型语言和解释型语言">编译型语言和解释型语言？？</span></h2><h2><span id="基本数据类型的取值范围">基本数据类型的取值范围</span></h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tuojunjie/p/6383624.html">先了解下补码</a><br>Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</p>
-<ul>
-<li>byte：</li>
-</ul>
-<p>byte 数据类型是8位、有符号的，以二进制补码表示的整数；<br>最小值是 -128（-2^7）；<br>最大值是 127（2^7-1）；<br>默认值是 0；<br>byte 类型用在大型数组中节约空间，主要代替整数，因为 byte 变量占用的空间只有 int 类型的四分之一；<br>例子：byte a = 100，byte b = -50。</p>
-<ul>
-<li>short：</li>
-</ul>
-<p>short 数据类型是 16 位、有符号的以二进制补码表示的整数<br>最小值是 -32768（-2^15）；<br>最大值是 32767（2^15 - 1）；<br>Short 数据类型也可以像 byte 那样节省空间。一个short变量是int型变量所占空间的二分之一；<br>默认值是 0；<br>例子：short s = 1000，short r = -20000。</p>
-<ul>
-<li>int：</li>
-</ul>
-<p>int 数据类型是32位、有符号的以二进制补码表示的整数；<br>最小值是 -2,147,483,648（-2^31）；<br>最大值是 2,147,483,647（2^31 - 1）；<br>一般地整型变量默认为 int 类型；<br>默认值是 0 ；<br>例子：int a = 100000, int b = -200000。<br>long：</p>
-<ul>
-<li>long 数据类型是 64 位、有符号的以二进制补码表示的整数；<br>最小值是 -9,223,372,036,854,775,808（-2^63）；<br>最大值是 9,223,372,036,854,775,807（2^63 -1）；<br>这种类型主要使用在需要比较大整数的系统上；<br>默认值是 0L；<br>例子： long a = 100000L，Long b = -200000L。<br>“L”理论上不分大小写，但是若写成”l”容易与数字”1”混淆，不容易分辩。所以最好大写。</li>
-<li>float：</li>
-</ul>
-<p>float 数据类型是单精度、32位、符合IEEE 754标准的浮点数；<br>float 在储存大型浮点数组的时候可节省内存空间；<br>默认值是 0.0f；<br>浮点数不能用来表示精确的值，如货币；<br>例子：float f1 = 234.5f。</p>
-<ul>
-<li>double：</li>
-</ul>
-<p>double 数据类型是双精度、64 位、符合IEEE 754标准的浮点数；<br>浮点数的默认类型为double类型；<br>double类型同样不能表示精确的值，如货币；<br>默认值是 0.0d；<br>例子：double d1 = 123.4。</p>
-<ul>
-<li>boolean：</li>
-</ul>
-<p>boolean数据类型表示一位的信息；<br>只有两个取值：true 和 false；<br>这种类型只作为一种标志来记录 true/false 情况；<br>==默认值是 false==；<br>例子：boolean one = true。</p>
-<ul>
-<li>char：</li>
-</ul>
-<p>char类型是一个单一的 16 位 Unicode 字符；<br>最小值是 \u0000（即为0）；<br>最大值是 \uffff（即为65,535）；<br>char 数据类型可以储存任何字符；<br>例子：char letter = ‘A’;</p>
-<h2><span id="引用类型">引用类型</span></h2><h2><span id="访问控制修饰符">访问控制修饰符</span></h2><table class="reference">
-<caption style="font-weight: bold;font-size:16px;font-weight: bold;" id="accesscontrol-levels">访问控制</caption>
-<tbody><tr>
-<th>修饰符</th>
-<th>当前类</th>
-<th>同一包内</th>
-<th>子孙类(同一包)</th>
-<th>子孙类(不同包)</th>
-<th>其他包</th>
-</tr>
-<tr>
-<td headers="h1"><code>public</code></td>
-<td headers="h2">Y</td>
-<td headers="h3">Y</td>
-<td headers="h4">Y</td>
-<td headers="h5">Y</td>
-<td headers="h6">Y</td>
-</tr>
-<tr>
-<td headers="h1"><code>protected</code></td>
-<td headers="h2">Y</td>
-<td headers="h3">Y</td>
-<td headers="h4">Y</td>
-
-<td headers="h5">Y/N（<a href="#protected-desc">说明</a>）</td>
-<td headers="h6">N</td>
-</tr>
-<tr>
-<td headers="h1"><code>default</code></td>
-<td headers="h2">Y</td>
-<td headers="h3">Y</td>
-<td headers="h4">Y</td>
-<td headers="h5">N</td>
-<td headers="h6">N</td>
-</tr>
-<tr>
-<td headers="h1"><code>private</code></td>
-<td headers="h2">Y</td>
-<td headers="h3">N</td>
-<td headers="h4">N</td>
-<td headers="h5">N</td>
-<td headers="h6">N</td>
-</tr>
-</tbody></table>
-默认访问修饰符-不使用任何关键字
-使用默认访问修饰符声明的变量和方法，对同一个包内的类是可见的。接口里的变量都隐式声明为 public static final,而接口里的方法默认情况下访问权限为 public。
-
-
-<ul>
-<li>==受保护的访问修饰符-protected<br>protected== 需要从以下两个点来分析说明：</li>
-</ul>
-<p>子类与基类在同一包中：被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问；</p>
-<p>子类与基类不在同一包中：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的protected方法。</p>
-<h2><span id="非访问控制修饰符">非访问控制修饰符</span></h2><p>为了实现一些其他的功能，Java 也提供了许多非访问修饰符。</p>
-<p>static 修饰符，用来修饰类方法和类变量。</p>
-<p>final 修饰符，用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的。</p>
-<p>abstract 修饰符，用来创建抽象类和抽象方法。</p>
-<p>synchronized 和 volatile 修饰符，主要用于线程的编程。</p>
-<p>static 修饰符<br>静态变量：</p>
-<p>static 关键字用来声明独立于对象的静态变量，无论一个类实例化多少对象，它的静态变量只有一份拷贝。 静态变量也被称为类变量。局部变量不能被声明为 static 变量。</p>
-<p>静态方法：</p>
-<p>static 关键字用来声明独立于对象的静态方法。静态方法不能使用类的非静态变量。静态方法从参数列表得到数据，然后计算这些数据</p>
-<p>synchronized 修饰符<br>synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符</p>
-<p>transient 修饰符<br>序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。</p>
-<p>该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</p>
-<p>volatile 修饰符<br>volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
-<p>一个 volatile 对象引用可能是 null。</p>
-<h2><span id="java运算符">java运算符</span></h2><h2><span id="java-循环结构">java 循环结构</span></h2><ul>
-<li>while 循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while（true）&#123;&#125;</span><br></pre></td></tr></table></figure></li>
-<li>do…while 循环<br>对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。</li>
-</ul>
-<p>do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。</p>
-<ul>
-<li>for循环<br>虽然所有循环结构都可以用 while 或者 do…while表示，但 Java 提供了另一种语句 —— for 循环，使一些循环结构变得更加简单。</li>
-</ul>
-<p>for循环执行的次数是在执行前就确定的。语法格式如下：</p>
-<p>for(初始化; 布尔表达式; 更新) {<br>    //代码语句<br>}</p>
-<ul>
-<li>Java 增强 for 循环<br>Java5 引入了一种主要用于数组的增强型 for 循环。</li>
-</ul>
-<p>Java 增强 for 循环语法格式如下:</p>
-<p>for(声明语句 : 表达式)<br>{<br>   //代码句子<br>}</p>
-<ul>
-<li>break 关键字<br>break 主要用在循环语句或者 switch 语句中，用来跳出整个语句块。</li>
-</ul>
-<p>break 跳出最里层的循环，并且继续执行该循环下面的语句。</p>
-<p>语法<br>break 的用法很简单，就是循环结构中的一条语句：</p>
-<p>break;</p>
-<ul>
-<li>continue 关键字<br>continue 适用于任何循环控制结构中。作用是让程序立刻跳转到下一次循环的迭代。<br>==在 for 循环中，continue 语句使程序立即跳转到更新语句。==</li>
-</ul>
-<p>==在 while 或者 do…while 循环中，程序立即跳转到布尔表达式的判断语句==。</p>
-<h2><span id="判断语句">判断语句</span></h2><p> if …else</p>
-<h2><span id="switch-case">switch case</span></h2><p> switch 语句中的变量类型可以是： byte、short、int 或者 char。从 Java SE 7 开始，switch 支持字符串 String 类型了，同时 case 标签必须为字符串常量或字面量。</p>
-<h2><span id="java-numberampmath">java Number&amp;Math</span></h2><p> ceil 向上取整<br> floor （地板） 向下取整<br> round 算法为Math.floor(x+0.5) 向下取整</p>
-<h2><span id="string-stringbuffer-stringbuilder">String StringBuffer StringBuilder</span></h2><p> String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了<br> 为什么门说String对象是不可变的呢？</p>
-<p>原因在于实例中的 s 只是一个 String 对象的引用，并不是对象本身，当执行 s = “Runoob”; 创建了一个新的对象 “Runoob”，而原来的 “Google” 还存在于内存中</p>
-<h2><span id="java-正则表达式">java 正则表达式</span></h2><h2><span id="java-stream-file-io">Java Stream。File。Io</span></h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/01/11/Java%20%E5%9F%BA%E7%A1%80/" data-id="ckjs4ucs80000dwuufzaz2boa" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-first" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/08/first/" class="article-date">
-  <time class="dt-published" datetime="2021-01-08T06:31:19.000Z" itemprop="datePublished">2021-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/08/first/">first</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
         
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/01/08/first/" data-id="ckjs4ucsd0001dwuufijd2qny" data-title="first" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/07/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-01-07T10:24:23.753Z" itemprop="datePublished">2021-01-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/01/07/hello-world/" data-id="ckjs4ucsk0002dwuuezh61hc7" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/01/11/Java%20%E5%9F%BA%E7%A1%80/">(no title)</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
-          <li>
-            <a href="/2021/01/08/first/">first</a>
-          </li>
         
-          <li>
-            <a href="/2021/01/07/hello-world/">Hello World</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
-  
-</aside>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Nienter's Home">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/09/Java%20%E5%9F%BA%E7%A1%80/">Java基础</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/09/Java%20%E5%9F%BA%E7%A1%80/">
+          
+          
+            
+          
+          
+
+
+基础概念
+对象
+类
+方法
+实例变量
+
+
+基本语法
+java标识符
+不用数字开头的原因
+
+
+java修饰符
+java变量？？
+Java 数组
+Java 枚举
+java 关键字
+java注释
+继承
+接口
+Java 源程序与编译型运行区别
+编译型语言和解释型语言？？
+基本数据类型的取值范围
+引用类型
+访问控制修饰符
+非访问控制修饰符
+java运算符
+java 循环结构
+判断语句
+switch ca
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-09 14:31" pubdate>
+              2021-01-09
+            </time>
+          </div>
+        
+        
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 yumengyang<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
+    </article>
   </div>
-</footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/08/first/">first</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/08/first/">
+          
+          
+            
+          
+          
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-08 14:31" pubdate>
+              2021-01-08
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/07/hello-world/">Hello World</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/07/hello-world/">
+          
+          
+            
+          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-07 18:24" pubdate>
+              2021-01-07
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
 </body>
 </html>
