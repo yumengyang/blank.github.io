@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.6k 字
+      5.7k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      40
+      64
        分钟
     </span>
   
@@ -248,22 +248,33 @@
 <li><a href="#java-%E6%9E%9A%E4%B8%BE">Java 枚举</a></li>
 <li><a href="#java-%E5%85%B3%E9%94%AE%E5%AD%97">java 关键字</a></li>
 <li><a href="#java%E6%B3%A8%E9%87%8A">Java注释</a></li>
+<li><a href="#%E5%B0%81%E8%A3%85">封装</a></li>
 <li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
+<li><a href="#%E5%A4%9A%E6%80%81">多态</a></li>
 <li><a href="#%E6%8E%A5%E5%8F%A3">接口</a></li>
 <li><a href="#java-%E6%BA%90%E7%A8%8B%E5%BA%8F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%9E%8B%E8%BF%90%E8%A1%8C%E5%8C%BA%E5%88%AB">Java 源程序与编译型运行区别</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%E5%92%8C%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80">编译型语言和解释型语言？？</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%E5%92%8C%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80">编译型语言和解释型语言</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E5%8C%96%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%B7%E8%B4%9D">使用序列化实现对象的拷贝</a></li>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4">基本数据类型的取值范围</a></li>
 <li><a href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B">引用类型</a></li>
 <li><a href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6">访问控制修饰符</a></li>
 <li><a href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6">非访问控制修饰符</a></li>
+<li><a href="#%E5%86%85%E9%83%A8%E7%B1%BB">内部类</a><ul>
+<li><a href="#%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB">成员内部类</a></li>
+<li><a href="#%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB">局部内部类</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB">匿名内部类</a></li>
+</ul>
+</li>
+<li><a href="#final%E4%BD%BF%E7%94%A8">final使用</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB">静态内部类</a></li>
 <li><a href="#java%E8%BF%90%E7%AE%97%E7%AC%A6">java运算符</a></li>
 <li><a href="#java-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84">java 循环结构</a></li>
 <li><a href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5">判断语句</a></li>
 <li><a href="#switch-case">switch case</a></li>
 <li><a href="#java-numbermath">java Number&amp;Math</a></li>
 <li><a href="#string-stringbuffer-stringbuilder">String StringBuffer StringBuilder</a></li>
-<li><a href="#java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">java 正则表达式</a></li>
-<li><a href="#java-stream-file-io">Java Stream。File。Io</a></li>
+<li><a href="#java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">Java 正则表达式</a></li>
+<li><a href="#java-streamfileio">Java Stream，File，Io</a></li>
 </ul>
 </li>
 </ul>
@@ -518,12 +529,29 @@
 <hr>
 <h2><span id="java注释">Java注释</span></h2><p>三种</p>
 <p>单行注释，多行注释，文档注释</p>
-<h2><span id="继承">继承</span></h2><p>在 Java 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。</p>
+<h2><span id="封装">封装</span></h2><h2><span id="继承">继承</span></h2><p>在 Java 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。</p>
 <p>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。</p>
+<p>继承是描述 is a的关系。</p>
+<h2><span id="多态">多态</span></h2><p>所谓多态就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定，即一个引用变量倒底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪个类中实现的方法，<strong>必须在由程序运行期间才能决定</strong>。因为在程序运行时才确定具体的类，这样，不用修改源程序代码，就可以让引用变量绑定到各种不同的类实现上，从而导致该引用调用的具体方法随之改变，即不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态，这就是多态性</p>
 <h2><span id="接口">接口</span></h2><p>在 Java 中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。</p>
 <p>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。</p>
 <h2><span id="java-源程序与编译型运行区别">Java 源程序与编译型运行区别</span></h2><p><img src="https://www.runoob.com/wp-content/uploads/2013/12/ZSSDMld.png" srcset="/img/loading.gif" alt="image"></p>
-<h2><span id="编译型语言和解释型语言">编译型语言和解释型语言？？</span></h2><h2><span id="基本数据类型的取值范围">基本数据类型的取值范围</span></h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tuojunjie/p/6383624.html">先了解下补码</a><br>Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</p>
+<h2><span id="编译型语言和解释型语言">编译型语言和解释型语言</span></h2><h2><span id="使用序列化实现对象的拷贝">使用序列化实现对象的拷贝</span></h2><ul>
+<li><p>浅拷贝</p>
+<p>  1、 基本类型</p>
+<p>​     如果变量是基本很类型，则拷贝其值，比如int、float等。</p>
+<p>   2、 对象</p>
+<p>​     如果变量是一个实例对象，则<strong>拷贝其地址引用</strong>，也就是说此时新对象与原来对象是公用该实例变量。</p>
+<p>   3、 String字符串</p>
+<p>​     若变量为String字符串，则拷贝其地址引用。但是在修改时，它会从字符串池中重新生成一个新的字符串，原有对象保持不变</p>
+</li>
+<li><p>深拷贝</p>
+<p>内存中通过字节流的拷贝是比较容易实现的。把母对象写入到一个字节流中，再从字节流中将其读出来，这样就可以创建一个新的对象了，并且该新对象与母对象之间并不存在引用共享的问题，真正实现对象的深拷贝</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloneUtils</span> </span>&#123;<br>    <span class="hljs-meta">@SuppressWarnings(&quot;unchecked&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T extends Serializable&gt; <span class="hljs-function">T <span class="hljs-title">clone</span><span class="hljs-params">(T obj)</span></span>&#123;<br>        T cloneObj = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">//写入字节流</span><br>            ByteArrayOutputStream out = <span class="hljs-keyword">new</span> ByteArrayOutputStream();<br>            ObjectOutputStream obs = <span class="hljs-keyword">new</span> ObjectOutputStream(out);<br>            obs.writeObject(obj);<br>            obs.close();<br>            <br>            <span class="hljs-comment">//分配内存，写入原始对象，生成新对象</span><br>            ByteArrayInputStream ios = <span class="hljs-keyword">new</span> ByteArrayInputStream(out.toByteArray());<br>            ObjectInputStream ois = <span class="hljs-keyword">new</span> ObjectInputStream(ios);<br>            <span class="hljs-comment">//返回生成的新对象</span><br>            cloneObj = (T) ois.readObject();<br>            ois.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>        <span class="hljs-keyword">return</span> cloneObj;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>使用该工具类的对象必须要实现Serializable接口，否则是没有办法实现克隆的</p>
+</li>
+</ul>
+<h2><span id="基本数据类型的取值范围">基本数据类型的取值范围</span></h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tuojunjie/p/6383624.html">先了解下补码</a><br>Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</p>
 <ul>
 <li>byte：</li>
 </ul>
@@ -607,7 +635,7 @@
 <p>子类与基类在同一包中：被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问；</p>
 <p>子类与基类不在同一包中：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的protected方法。</p>
 <h2><span id="非访问控制修饰符">非访问控制修饰符</span></h2><p>为了实现一些其他的功能，Java 也提供了许多非访问修饰符。</p>
-<p>static 修饰符，用来修饰类方法和类变量。</p>
+<p>static 修饰符，用来修饰类方法和类变量。 属于类不属于某一个实例变量，或者说被说有实例共享，所以this不能使用，只能访问静态变量静态方法</p>
 <p>final 修饰符，用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的。</p>
 <p>abstract 修饰符，用来创建抽象类和抽象方法。</p>
 <p>synchronized 和 volatile 修饰符，主要用于线程的编程。</p>
@@ -620,6 +648,40 @@
 <p>该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</p>
 <p>volatile 修饰符<br>volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
 <p>一个 volatile 对象引用可能是 null。</p>
+<h2><span id="内部类">内部类</span></h2><h3><span id="成员内部类">成员内部类</span></h3><p>第一：成员内部类中不能存在任何static的变量和方法；</p>
+<p>​         Static 不用实例化就能加载进内存</p>
+<p>　　而内部类需要外部类实例化后才能加载进内存。这就间接造成static需要实例化了。与static不需要实例化语义矛盾</p>
+<p>第二：成员内部类是依附于外围类的，所以只有先创建了外围类才能够创建内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OuterClass</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> String str;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">outerDisplay</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;outerClass...&quot;</span>);<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InnerClass</span></span>&#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">innerDisplay</span><span class="hljs-params">()</span></span>&#123;<br>            <span class="hljs-comment">//使用外围内的属性</span><br>            str = <span class="hljs-string">&quot;chenssy...&quot;</span>;<br>            System.out.println(str);<br>            <span class="hljs-comment">//使用外围内的方法</span><br>            outerDisplay();<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-comment">/*推荐使用getxxx()来获取成员内部类，尤其是该内部类的构造函数无参数时 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> InnerClass <span class="hljs-title">getInnerClass</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> InnerClass();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        OuterClass outer = <span class="hljs-keyword">new</span> OuterClass();<br>        OuterClass.InnerClass inner = outer.getInnerClass();<br>        inner.innerDisplay();<br>    &#125;<br>&#125;<br>--------------------<br>chenssy...<br>outerClass...<br></code></pre></td></tr></table></figure>
+
+
+<h3><span id="局部内部类">局部内部类</span></h3><p>有这样一种内部类，它是嵌套在方法和作用于内的，对于这个类的使用主要是应用与解决比较复杂的问题，想创建一个类来辅助我们的解决方案，到那时又不希望这个类是公共可用的，所以就产生了局部内部类，局部内部类和成员内部类一样被编译，只是它的作用域发生了改变，它只能在该方法和属性中被使用，出了该方法和属性就会失效。</p>
+<p>定义在方法里</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parcel5</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Destionation <span class="hljs-title">destionation</span><span class="hljs-params">(String str)</span></span>&#123;<br>        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PDestionation</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Destionation</span></span>&#123;<br>            <span class="hljs-keyword">private</span> String label;<br>            <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">PDestionation</span><span class="hljs-params">(String whereTo)</span></span>&#123;<br>                label = whereTo;<br>            &#125;<br>            <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">readLabel</span><span class="hljs-params">()</span></span>&#123;<br>                <span class="hljs-keyword">return</span> label;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PDestionation(str);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Parcel5 parcel5 = <span class="hljs-keyword">new</span> Parcel5();<br>        Destionation d = parcel5.destionation(<span class="hljs-string">&quot;chenssy&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p> 定义在作用域内:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parcel6</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">internalTracking</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> b)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(b)&#123;<br>            <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TrackingSlip</span></span>&#123;<br>                <span class="hljs-keyword">private</span> String id;<br>                TrackingSlip(String s) &#123;<br>                    id = s;<br>                &#125;<br>                <span class="hljs-function">String <span class="hljs-title">getSlip</span><span class="hljs-params">()</span></span>&#123;<br>                    <span class="hljs-keyword">return</span> id;<br>                &#125;<br>            &#125;<br>            TrackingSlip ts = <span class="hljs-keyword">new</span> TrackingSlip(<span class="hljs-string">&quot;chenssy&quot;</span>);<br>            String string = ts.getSlip();<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">track</span><span class="hljs-params">()</span></span>&#123;<br>        internalTracking(<span class="hljs-keyword">true</span>);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Parcel6 parcel6 = <span class="hljs-keyword">new</span> Parcel6();<br>        parcel6.track();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+<h3><span id="匿名内部类">匿名内部类</span></h3><p>  1 匿名内部类是没有访问修饰符的。</p>
+<p>  2 new 匿名内部类，这个类首先是要存在的。如果我们将那个InnerClass接口注释掉，就会出现编译出错。</p>
+<p>  3 注意getInnerClass()方法的形参，第一个形参是用final修饰的，而第二个却没有。同时我们也发现第二个形参在匿名内部类中没有使用过，所以当所在方法的形参需要被匿名内部类使用，那么这个形参就必须为final。</p>
+<p> 4 匿名内部类是没有构造方法的。因为它连名字都没有何来构造方法。</p>
+<h2><span id="final使用">final使用</span></h2><p> 我们给匿名内部类传递参数的时候，若该形参在内部类中需要被使用，那么该形参必须要为final。也就是说：<strong>当所在的方法的形参需要被内部类里面使用时，该形参必须为final。</strong></p>
+<p>   为什么必须要为final呢？</p>
+<p>   首先我们知道在内部类编译成功后，它会产生一个class文件，该class文件与外部类并不是同一class文件，仅仅只保留对外部类的引用。当外部类传入的参数需要被内部类调用时，从java程序的角度来看是直接被调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OuterClass</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String name,String age)</span></span>&#123;<br>        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InnerClass</span></span>&#123;<br>            <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span></span>&#123;<br>                System.out.println(name);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p> 从上面代码中看好像name参数应该是被内部类直接调用？其实不然，在java编译之后实际的操作如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OuterClass</span>$<span class="hljs-title">InnerClass</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">InnerClass</span><span class="hljs-params">(String name,String age)</span></span>&#123;<br>        <span class="hljs-keyword">this</span>.InnerClass$name = name;<br>        <span class="hljs-keyword">this</span>.InnerClass$age = age;<br>    &#125;<br>    <br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-keyword">this</span>.InnerClass$name + <span class="hljs-string">&quot;----&quot;</span> + <span class="hljs-keyword">this</span>.InnerClass$age );<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p> 所以从上面代码来看，内部类并不是直接调用方法传递的参数，而是利用自身的构造器对传入的参数进行备份，自己内部方法调用的实际上时自己的属性而不是外部方法传递进来的参数。</p>
+<p>​    直到这里还没有解释为什么是final？在内部类中的属性和外部方法的参数两者从外表上看是同一个东西，但实际上却不是，所以他们两者是可以任意变化的，也就是说在内部类中我对属性的改变并不会影响到外部的形参，而然这从程序员的角度来看这是不可行的，毕竟站在程序的角度来看这两个根本就是同一个，如果内部类该变了，而外部方法的形参却没有改变这是难以理解和不可接受的，所以为了保持参数的一致性，就规定使用final来避免形参的不改变。</p>
+<p>   简单理解就是，拷贝引用，为了避免引用值发生改变，例如被外部类的方法修改等，而导致内部类得到的值不一致，于是用final来让该引用不可改变。</p>
+<p>   <strong><em>故如果定义了一个匿名内部类，并且希望它使用一个其外部定义的参数，那么编译器会要求该参数引用是final的。</em></strong></p>
+<h2><span id="静态内部类">静态内部类</span></h2><p>不能引用外部非static的变量或方法</p>
+<p> 它的创建是不需要依赖于外围类的</p>
 <h2><span id="java运算符">java运算符</span></h2><h2><span id="java-循环结构">java 循环结构</span></h2><ul>
 <li>while 循环<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">while</span>（<span class="hljs-literal">true</span>）&#123;&#125;<br></code></pre></td></tr></table></figure></li>
 <li>do…while 循环<br>对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。</li>
@@ -650,7 +712,7 @@
 <h2><span id="java-numberampmath">java Number&amp;Math</span></h2><p> ceil 向上取整<br> floor （地板） 向下取整<br> round 算法为Math.floor(x+0.5) 向下取整</p>
 <h2><span id="string-stringbuffer-stringbuilder">String StringBuffer StringBuilder</span></h2><p> String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了<br> 为什么门说String对象是不可变的呢？</p>
 <p>原因在于实例中的 s 只是一个 String 对象的引用，并不是对象本身，当执行 s = “Runoob”; 创建了一个新的对象 “Runoob”，而原来的 “Google” 还存在于内存中</p>
-<h2><span id="java-正则表达式">java 正则表达式</span></h2><h2><span id="java-stream-file-io">Java Stream。File。Io</span></h2>
+<h2><span id="java-正则表达式">Java 正则表达式</span></h2><h2><span id="java-streamfileio">Java Stream，File，Io</span></h2>
             </div>
             <hr>
             <div>
