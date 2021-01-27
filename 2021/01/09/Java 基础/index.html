@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.2k 字
+      7.3k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      80
+      83
        分钟
     </span>
   
@@ -269,6 +269,9 @@
 <li><a href="#%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB">静态内部类</a></li>
 <li><a href="#instanceof%E4%B8%8Egetclass%E7%9A%84%E5%8C%BA%E5%88%AB">instanceof与getClass的区别</a></li>
 <li><a href="#string-stringbuffer-stringbuilder">String StringBuffer StringBuilder</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%82%E5%B8%B8%E4%BD%93%E7%B3%BB">异常体系</a><ul>
 <li><a href="#java%E8%BF%90%E7%AE%97%E7%AC%A6">java运算符</a></li>
 <li><a href="#java-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84">java 循环结构</a></li>
 <li><a href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5">判断语句</a></li>
@@ -719,6 +722,15 @@
 <p>  1、String：在字符串不经常变化的场景中可以使用String类，如：常量的声明、少量的变量运算等。</p>
 <p>  ​     2、StringBuffer：在频繁进行字符串的运算（拼接、替换、删除等），并且运行在多线程的环境中，则可以考虑使用StringBuffer，例如XML解析、HTTP参数解析和封装等。</p>
 <p>  ​     3、StringBuilder：在频繁进行字符串的运算（拼接、替换、删除等），并且运行在多线程的环境中，则可以考虑使用StringBuffer，如SQL语句的拼装、JSON封装等（貌似这两个我也是使用|StringBuffer）。</p>
+<h1><span id="异常体系">异常体系</span></h1><p>  <strong><em>不论程序是否发生异常，finally代码块总是会执行。所以finally一般用来关闭资源。</em></strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** 自定义异常 继承Exception类 **/</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span><span class="hljs-params">()</span></span>&#123;<br>        <br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span><span class="hljs-params">(String message)</span></span>&#123;<br>        <span class="hljs-keyword">super</span>(message);<br>    &#125;<br>&#125;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> <span class="hljs-keyword">throws</span> MyException</span>&#123;<br>        <span class="hljs-keyword">if</span>(i == <span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MyException(<span class="hljs-string">&quot;该值不能为0.......&quot;</span>);<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            System.out.println( i / <span class="hljs-number">2</span>);<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Test test = <span class="hljs-keyword">new</span> Test();<br>        <span class="hljs-keyword">try</span> &#123;<br>            test.display(<span class="hljs-number">0</span>);<br>            System.out.println(<span class="hljs-string">&quot;---------------------&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (MyException e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>  使用结论：</p>
+<ul>
+<li>尽可能缩小trycatch块</li>
+<li>保证所有的资源都释放 充分使用finally</li>
+<li>catch应分清类型</li>
+<li></li>
+</ul>
 <h2><span id="java运算符">java运算符</span></h2><h2><span id="java-循环结构">java 循环结构</span></h2><ul>
 <li>while 循环<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">while</span>（<span class="hljs-literal">true</span>）&#123;&#125;<br></code></pre></td></tr></table></figure></li>
 <li>do…while 循环<br>对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。</li>
