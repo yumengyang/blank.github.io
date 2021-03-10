@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      10.1k 字
+      10.2k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      118
+      120
        分钟
     </span>
   
@@ -283,6 +283,7 @@
 <li><a href="#%E9%9B%86%E5%90%88">集合</a><ul>
 <li><a href="#arraylist">ArrayList</a></li>
 <li><a href="#%E4%BA%8C-arraylist%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">二、ArrayList源码分析</a></li>
+<li><a href="#string%E7%9A%84hashcode%E9%87%8D%E5%A4%8D%E9%97%AE%E9%A2%98">String的hashcode重复问题</a></li>
 <li><a href="#java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">Java 正则表达式</a></li>
 <li><a href="#java-streamfileio">Java Stream，File，Io</a></li>
 </ul>
@@ -820,6 +821,14 @@
 <p>在这里有一个疑问，为什么每次扩容处理会是1.5倍，而不是2.5、3、4倍呢？通过google查找，发现1.5倍的扩容是最好的倍数。因为一次性扩容太大(例如2.5倍)可能会浪费更多的内存(1.5倍最多浪费33%，而2.5被最多会浪费60%，3.5倍则会浪费71%……)。但是一次性扩容太小，需要多次对数组重新分配内存，对性能消耗比较严重。所以1.5倍刚刚好，既能满足性能需求，也不会造成很大的内存消耗。</p>
 <p>处理这个ensureCapacity()这个扩容数组外，ArrayList还给我们提供了将底层数组的容量调整为当前列表保存的实际元素的大小的功能。它可以通过trimToSize()方法来实现。该方法可以最小化ArrayList实例的存储量。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">trimToSize</span><span class="hljs-params">()</span> </span>&#123;<br>        modCount++;<br>        <span class="hljs-keyword">int</span> oldCapacity = elementData.length;<br>        <span class="hljs-keyword">if</span> (size &lt; oldCapacity) &#123;<br>            elementData = Arrays.copyOf(elementData, size);<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<h2><span id="string的hashcode重复问题">String的hashcode重复问题</span></h2><p>在A-z范围内有特殊字符，从结果看，仅仅3位长度的字符串：<br>不处理：　138510次重复<br>去掉字母意外字符：　122500次重复<br>所有字符转小写：6612次重复(少了很多）<br>去掉字母意外字符，并且转小写：没有重复！4位字符串也没见重复</p>
+<p>不难看出：</p>
+<ol>
+<li>缺省实现为英文字母优化</li>
+<li>字母大小写可能导致重复</li>
+</ol>
+<p>可能：<br>长字符串可能hashcode重复<br>中文字符串和特殊字符可能hashcode重复 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(<span class="hljs-string">&quot;重地&quot;</span>.hashCode());<br>System.out.println(<span class="hljs-string">&quot;通话&quot;</span>.hashCode());<br></code></pre></td></tr></table></figure>
 <h2><span id="java-正则表达式">Java 正则表达式</span></h2><h2><span id="java-streamfileio">Java Stream，File，Io</span></h2>
             </div>
             <hr>
