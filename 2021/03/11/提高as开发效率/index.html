@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-10 13:47" pubdate>
-        March 10, 2021 pm
+      <time datetime="2021-03-11 10:06" pubdate>
+        March 11, 2021 am
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      46 字
+      592 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      6
        分钟
     </span>
   
@@ -227,13 +227,47 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h1><span id="apk文件结构">Apk文件结构</span></h1><ul>
-<li>以压缩文件存形式储的。</li>
-<li>asset 存储静态资源 不经过aapt编译</li>
-<li>meta-inf 签名文件</li>
-<li>resource-arsc  资源索引表 </li>
+              <h1><span id="提高as开发效率">提高as开发效率</span></h1><h3><span id="1快速生成main方法并打印">1.快速生成main方法并打印</span></h3><ul>
+<li><p>用<code>psvm</code>命令能快速生成<code>main</code>方法。</p>
+</li>
+<li><p>用<code>sout</code>命令能快速生成打印方法<code>System.out.println</code>。</p>
+</li>
+<li><p>两个命令相结合的效果如下：</p>
+</li>
 </ul>
-<h2><span id="apk打包流程">apk打包流程</span></h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevibxzdTEYNBqm8o6via8hoIo0vIoQF7fvIOXRyTb3XficJaDbQObias7EWA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="2给new出来的对象快速赋值">2.给new出来的对象快速赋值</span></h3><p>在new出来的对象后面加上<code>.var</code>，就能实现快速赋值，效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevPU2qGBicqvY9CAuAVlOVMLUHBRIHSapIiccvKmS5lHWSgEUNZc5dwfVw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="3快速for循环">3.快速for循环</span></h3><p>1.基本变量</p>
+<p>比如：int，long，byte等，在需要进行for循环遍历的变量后加上<code>.for</code>，就能快速实现for循环功能，效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDev4HiaIInl5KQQxwLf5vpMdlNB6NJV5oTQhY1SEEDXNKG2UWbgsrjxhfQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<p>2.集合</p>
+<p>在需要进行forEach循环遍历的集合后加上<code>.for</code>，就能快速实现forEach循环功能，效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevJrRV40qkYodZHb4rKvoDLs9RKBJLOAIt4uAv2iaDibgySbk6AqTnonibw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="4快速判断">4.快速判断</span></h3><p>判断条件在开发过程中使用频率非常高，如何快速的写出判断条件呢？</p>
+<ul>
+<li><code>boolean.if</code> 可以生成if(boolean)</li>
+<li><code>boolean.else</code> 可以生成if(!boolean)</li>
+<li><code>string.null</code> 可以生成if(string==null)</li>
+<li><code>string.nn</code> 可以生成if(string!=null)</li>
+</ul>
+<p>具体实现效果如下：</p>
+<p><img src="/2021/03/11/%E6%8F%90%E9%AB%98as%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" alt="图片"></p>
+<p>此外<code>.switch</code>也有类似的功能。</p>
+<h3><span id="5快速trycatch">5.快速try…catch</span></h3><p>有时候我们有异常需要捕获，手动写try…catch比较麻烦，这时快速try…catch可以给我们节省不少时间，只需加<code>.try</code>即可，效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevJ7luBPwh1ZvYLTzzP0xygEggZlesMEdtYnGHHkmxXcSPsHT6TCmrYg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="6快速类型转换">6.快速类型转换</span></h3><p>有时候我们需要做类型转换，必须手写括号和赋值参数，同样有些麻烦，这时快速类型转换，可以帮我们搞定，只需加<code>.castvar</code>即可，效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevCZtZtfVmRHo48UgHYQWVVQVnj9iaJ2vZsyrHp792He5JkM4THibbMbzA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="7快速抽取变量">7.快速抽取变量</span></h3><p>有时候我们需要把方法中的<code>局部变量</code>，抽取成<code>成员变量</code>，或者<code>全局变量</code>，快速抽取变量可以帮你搞定，只需加<code>.field</code>即可，具体效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDev4qbv6OcrHJH49ZMbVJ2l9rCG1sZqUExF7B5ISbficOdOfaLB07QwhPQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="8快速定义optional">8.快速定义Optional</span></h3><p>有时候我们想把某个对象转换成<code>Optional</code>，避免出现空指针问题，只需加<code>.opt</code>即可，具体效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevFPibOI03Ro3UfF8DZI8uTlMIng1hgN24SNFkzKJia9AnhxtKINBDribDA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="9快速生成lambda语句">9.快速生成lambda语句</span></h3><p>如果你在用<code>jdk1.8</code>以上的版本，那么lambda表达式必不可少，因为用它可以极大的提高开发效率，少写很多代码。</p>
+<p>使用<code>.lambda</code>就能快速生成lambda语句，具体效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDevfGevScgpUsZ9wsevXj2sw2uSXqrNZRqku0vYibHyyib1JiaFffjr9BhgA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+<h3><span id="10快速迁移代码到新方法">10.快速迁移代码到新方法</span></h3><p>在代码重构时，经常需要把某段代码迁移到一个新方法中，这时使用快捷键<code>ctrl + alt + m</code>，具体效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uL371281oDGPIdY8rfMW5JICc6pYBDev9qfOL7Ns6Cic0EmGAOf7Cnt7fdD7vJXOrqQsicqZ082MuMjYbwszkBpw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="/img/loading.gif" alt="图片"></p>
+
             </div>
             <hr>
             <div>
@@ -249,18 +283,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/11/%E6%8F%90%E9%AB%98as%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/11/8%E7%A7%8D%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E6%96%B9%E6%B3%95/">
-                        <span class="hidden-mobile">8种保证线程安全的方法</span>
+                      <a href="/2021/03/10/Apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
