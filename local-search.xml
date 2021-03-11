@@ -17,11 +17,11 @@
   
   
   <entry>
-    <title></title>
+    <title>Apk文件结构</title>
     <link href="/2021/03/10/Apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"/>
     <url>/2021/03/10/Apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</url>
     
-    <content type="html"><![CDATA[<h1><span id="apk文件结构">Apk文件结构</span></h1><ul><li>以压缩文件存形式储的。</li><li>asset 存储静态资源 不经过aapt编译</li><li>meta-inf 签名文件</li><li>resource-arsc  资源索引表 </li></ul><h2><span id="apk打包流程">apk打包流程</span></h2>]]></content>
+    <content type="html"><![CDATA[<ul><li>以压缩文件存形式储的。</li><li>asset 存储静态资源 不经过aapt编译</li><li>meta-inf 签名文件</li><li>resource-arsc  资源索引表 </li></ul><h2><span id="apk打包流程">apk打包流程</span></h2>]]></content>
     
     
     
