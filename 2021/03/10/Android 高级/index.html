@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.2k 字
+      3.4k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      34
+      37
        分钟
     </span>
   
@@ -227,8 +227,32 @@
             <h1 style="display: none">Android高级</h1>
             
             <div class="markdown-body">
-              <!-- toc-->
+              <!-- toc -->
 
+<ul>
+<li><a href="#binder-aidl-%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B42%E5%91%A8">Binder、AIDL、多进程（建议学习时间：2周）</a></li>
+<li><a href="#view%E7%9A%84%E7%BB%98%E5%88%B6%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B43%E5%A4%A9">View的绘制（建议学习时间：3天）</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B41%E5%91%A8">事件分发（建议学习时间：1周）</a></li>
+<li><a href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B41%E5%A4%A9">消息队列（建议学习时间：1天）</a></li>
+<li><a href="#activity%E9%9A%BE%E7%82%B9%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B41%E5%A4%A9">Activity难点（建议学习时间：1天）</a></li>
+<li><a href="#service%E9%9A%BE%E7%82%B9%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B42%E5%A4%A9">Service难点（建议学习时间：2天）</a></li>
+<li><a href="#contentprovider%E9%9A%BE%E7%82%B9%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B43%E5%A4%A9">ContentProvider难点(建议学习时间：3天)</a></li>
+<li><a href="#asynctask%E5%8E%9F%E7%90%86%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B43%E5%A4%A9">AsyncTask原理(建议学习时间：3天)</a></li>
+<li><a href="#remoteviews%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B47%E5%A4%A9">RemoteViews(建议学习时间：7天)</a></li>
+<li><a href="#window%E5%92%8Cviewrootimpl%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B414%E5%A4%A9">Window和ViewRootImpl(建议学习时间：14天)</a></li>
+<li><a href="#%E5%88%81%E9%92%BB%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B4%E4%B8%80%E5%91%A8">刁钻问题汇总 (建议学习时间：一周)</a></li>
+<li><a href="#retrofit%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B414%E5%A4%A9">Retrofit原理分析 (建议学习时间：14天)</a></li>
+<li><a href="#rxjava%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B414%E5%A4%A9">RxJava原理分析 (建议学习时间：14天)</a></li>
+<li><a href="#glide%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B414%E5%A4%A9">Glide原理分析 (建议学习时间：14天)</a></li>
+<li><a href="#gradle%E6%8F%92%E4%BB%B6%E5%9F%BA%E7%A1%80-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B47%E5%A4%A9">Gradle插件基础 (建议学习时间：7天)</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B430-60%E5%A4%A9">设计模式 (建议学习时间：30-60天)</a></li>
+<li><a href="#mvc-mvp-mvvm-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B414%E5%A4%A9">MVC、MVP、MVVM (建议学习时间：14天)</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E5%8C%96-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B47%E5%A4%A9">组件化 (建议学习时间：7天)</a></li>
+<li><a href="#jni%E5%92%8Cndk%E5%9F%BA%E7%A1%80-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B430-60%E5%A4%A9">jni和ndk基础 (建议学习时间：30-60天)</a></li>
+<li><a href="#%E5%AE%89%E5%85%A8-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B414%E5%A4%A9">安全 (建议学习时间：14天)</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%8C%96-%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B430-60%E5%A4%A9">动态化 (建议学习时间：30-60天)</a></li>
+</ul>
+<!-- tocstop -->
 
 <h2><span id="binder-aidl-多进程建议学习时间2周">Binder、AIDL、多进程（建议学习时间：2周）</span></h2><p>知识点：Binder原理、AIDL的使用、多进程的定义和特性 学习资料： </p>
 <p>① Android开发艺术探索第2章【推荐理由】地球人都知道学Android要看艺术探索。 </p>
